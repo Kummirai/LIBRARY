@@ -65,7 +65,7 @@ form .btn {
   border: none;
 }
 
-form div{
+form div {
   margin-bottom: 10px;
 }
 form label {
@@ -84,5 +84,29 @@ section > main {
   grid-column: 2 / -1;
   grid-row: 1 / -1;
   display: grid;
-  grid-template-columns: repeat();
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  padding: 20px;
+  gap: 20px;
+}
+
+.books-content {
+  height: 150px;
+  border-radius: 4px;
+  display: flex;
+  border: 1px solid rgb(65, 64, 64);
+}
+
+.books-content .details {
+  padding: 20px 10px;
+}
+
+.books-content p {
+  margin: 0;
+  padding: 0;
+  color: #fff8dc;
+}
+
+.books-content img {
+  width: 150px;
+  object-fit: cover;
 }
