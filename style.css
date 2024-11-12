@@ -58,6 +58,24 @@ form {
   border-radius: 8px;
 }
 
+form .btn {
+  background-color: #fff8dc;
+  color: #191d22;
+  border: none;
+}
+
+form label {
+  margin: 0 0 5px 0;
+  color: #fff8dc;
+  font-size: 0.9rem;
+}
+
+form .btn:hover {
+  background-color: #191d22;
+  color: #fff8dc;
+  border: none;
+}
+
 section > main {
   grid-column: 2 / -1;
   grid-row: 1 / -1;
