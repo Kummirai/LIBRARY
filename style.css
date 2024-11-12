@@ -141,3 +141,13 @@ section > main {
   font-weight: 200;
   color: gray;
 }
+
+@media only screen and (max-width: 768px) {
+  aside {
+    width: 45%;
+  }
+
+  main {
+    width: 55%;
+  }
+}
