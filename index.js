@@ -27,6 +27,7 @@ const stepsToChrist = new Book(
 );
 
 const books = [theDesireOfAges, theGreatControversy, stepsToChrist];
+
 let booksContent = "";
 
 books.map((book) => {
@@ -34,14 +35,13 @@ books.map((book) => {
     <div class="books-content">
         <img src="https://img.freepik.com/free-vector/white-brochure-with-blue-wavy-shapes_1048-2838.jpg?t=st=1731442762~exp=1731446362~hmac=b6c460b0785726babc080b209ae6a849b0e39612110020df8d36081f902d6342&w=740" alt="my imge">
       <div class="details">
-        <p>${book.title}</p>
-        <p>${book.author}</p>
-        <p>${book.pages} pages</p>
-        <p>${book.isRead}</p>
+        <p class="title">${book.title}</p>
+        <p class="author">${book.author}</p>
+        <p class="pages">${book.pages} pages</p>
+        <p class="is-read">${book.isRead}</p>
       </div>
     </div>
       `;
 });
 
 mainSetion.innerHTML = booksContent;
-console.log(booksContent);
