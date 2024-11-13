@@ -1,9 +1,10 @@
-const mainSetion = document.querySelector("main");
-const book = document.getElementById('book');
-const author = document.getElementById('author');
-const pages = document.getElementById('pages');
-const btn = document.querySelector('.btn');
-const form = document.querySelector('form');
+const mainSection = document.querySelector("main");
+const book = document.getElementById("book");
+const author = document.getElementById("author");
+const pages = document.getElementById("pages");
+const btn = document.querySelector(".btn");
+const form = document.querySelector("form");
+const checkBox = document.getElementById("isRead");
 
 function Book(title, author, pages, isRead) {
   this.title = title;
@@ -33,17 +34,37 @@ const stepsToChrist = new Book(
 
 let books = [theDesireOfAges, theGreatControversy, stepsToChrist];
 
-form.addEventListener('submit', (event) => {
+let isItRead = "";
+
+checkBox.addEventListener("change", (event) => {
+  if (event.target.checked) {
+    isItRead = "Book Is Read";
+  } else {
+    isItRead = "Not Yet Read";
+  }
+  return isItRead;
+});
+
+form.addEventListener("submit", (event) => {
   event.preventDefault();
-  books.push(new Book(`${book.value}`, `${author.value}`, `${pages.value}`));
-  mainSetion.innerHTML = "Hello, world ";
+  books.push(
+    new Book(
+      `${book.value}`,
+      `${author.value}`,
+      `${pages.value}`,
+      `${isItRead}`
+    )
+  );
+  console.log(isItRead);
+
+  booksContent = " ";
   myBooks();
-})
+});
 
 let booksContent = "";
 
 function myBooks() {
-  books.map((book) => {
+  books.forEach((book) => {
     booksContent += `
     <div class="books-content">
       <div class="image">
@@ -57,10 +78,8 @@ function myBooks() {
       </div>
     </div>
       `;
-  })
-  
-  mainSetion.innerHTML = booksContent;
-  
-};
+  });
+  mainSection.innerHTML = booksContent;
+}
 
 myBooks();
