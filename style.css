@@ -151,7 +151,6 @@ section > main {
 
 .books-content .image {
   grid-column: 1 / 2;
-  background-color: red;
 }
 
 .books-content p {
