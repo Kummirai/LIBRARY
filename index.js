@@ -5,6 +5,8 @@ const pages = document.getElementById("pages");
 const btn = document.querySelector(".btn");
 const form = document.querySelector("form");
 const checkBox = document.getElementById("isRead");
+const addBook = document.querySelector(".addBook");
+const klose = document.getElementById("close");
 
 function Book(id, title, author, pages, isRead) {
   this.id = id;
@@ -103,3 +105,11 @@ function myBooks() {
 }
 
 myBooks();
+
+addBook.addEventListener("click", () => {
+  form.style.display = "flex";
+});
+
+klose.addEventListener("click", () => {
+  form.style.display = "none";
+});

@@ -25,8 +25,14 @@
             <h1>Book Library</h1>
             <p>Add, Read And Track Your Favorite Books</p>
           </header>
+          <div class="addBook">
+            <button class="btn addBook btn-primary">Add A Book</button>
+          </div>
           <form>
-            <h4>Add A Book</h4>
+            <div class="close">
+              <h4>Add A Book</h4>
+              <img id="close" src="./images/close.png" alt="close icon" />
+            </div>
             <div class="form-group">
               <label for="exampleInputEmail1">Book</label>
               <input
@@ -63,7 +69,9 @@
                 >Check If Book Is Read</label
               >
             </div>
-            <button type="submit" class="btn btn-primary">Add</button>
+            <button id="submit" type="submit" class="btn btn-primary">
+              Add
+            </button>
           </form>
         </aside>
         <main></main>
