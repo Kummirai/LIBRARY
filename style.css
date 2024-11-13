@@ -56,6 +56,11 @@ form {
   padding: 20px;
   border-radius: 8px;
 }
+form h4 {
+  color: #fff8dc;
+  font-weight: 200;
+  font-size: 1.2rem;
+}
 
 form .btn {
   background-color: rgb(48, 47, 47);
@@ -81,7 +86,7 @@ form .btn:hover {
 section > main {
   width: 70%;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-template-rows: repeat(6, 1fr);
   padding: 80px 40px 0 40px;
   gap: 20px;
@@ -93,17 +98,31 @@ section > main {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 14px;
-  height: 160px;
+  height: 180px;
   border: 1px solid rgb(65, 64, 64);
 }
 
 .books-content .details {
   padding: 20px 10px;
   grid-column: 2 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+.books-content .details .btn {
+  background-color: red;
+  border: none;
+  padding: 2px 8px;
+  font-size: 0.75rem;
+  border-radius: 3px;
+  color: #fff8dc;
 }
 
 .books-content .image {
   grid-column: 1 / 2;
+  background-color: red;
 }
 
 .books-content p {
@@ -113,12 +132,10 @@ section > main {
 }
 
 .books-content img {
-  margin: 4px;
-  width: 150px;
   object-fit: cover;
   border-radius: 3px;
   width: 100%;
-  height: 150px;
+  height: 100%;
   object-fit: cover;
   object-position: center top;
   backdrop-filter: blur(20px);

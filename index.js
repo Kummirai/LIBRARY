@@ -6,7 +6,8 @@ const btn = document.querySelector(".btn");
 const form = document.querySelector("form");
 const checkBox = document.getElementById("isRead");
 
-function Book(title, author, pages, isRead) {
+function Book(id, title, author, pages, isRead) {
+  this.id = id;
   this.title = title;
   this.author = author;
   this.pages = pages;
@@ -14,18 +15,21 @@ function Book(title, author, pages, isRead) {
 }
 
 const theGreatControversy = new Book(
+  1,
   "The Great Controversy",
   "Elen G White",
   592,
   "not yet read"
 );
 const theDesireOfAges = new Book(
+  2,
   "The Desire Of Ages",
   "Elen G White",
   456,
   "not yet read"
 );
 const stepsToChrist = new Book(
+  3,
   "Steps to Christ",
   "Elen G White",
   287,
@@ -46,9 +50,11 @@ checkBox.addEventListener("change", (event) => {
 });
 
 form.addEventListener("submit", (event) => {
+  console.log(remove);
   event.preventDefault();
   books.push(
     new Book(
+      `${books.length + 1}`,
       `${book.value}`,
       `${author.value}`,
       `${pages.value}`,
@@ -62,8 +68,11 @@ form.addEventListener("submit", (event) => {
 });
 
 let booksContent = "";
+let identifier = 1;
 
 function myBooks() {
+  console.log(books);
+
   books.forEach((book) => {
     booksContent += `
     <div class="books-content">
@@ -75,11 +84,20 @@ function myBooks() {
         <p class="author">${book.author}</p>
         <p class="pages">${book.pages} pages</p>
         <p class="is-read">${book.isRead}</p>
+        <button id="remove"  class="btn"  "btn-primary">Remove</button>
       </div>
     </div>
       `;
   });
   mainSection.innerHTML = booksContent;
+  const removeBtn = document.querySelectorAll("#remove");
+  console.log(removeBtn);
+
+  removeBtn.forEach((button) => {
+    button.addEventListener("click", () => {
+      console.log("you clicked me!");
+    });
+  });
 }
 
 myBooks();
