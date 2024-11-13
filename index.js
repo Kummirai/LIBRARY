@@ -36,10 +36,9 @@ let books = [theDesireOfAges, theGreatControversy, stepsToChrist];
 form.addEventListener('submit', (event) => {
   event.preventDefault();
   books.push(new Book(`${book.value}`, `${author.value}`, `${pages.value}`));
-  mainSetion.innerHTML ='';
+  mainSetion.innerHTML = "Hello, world ";
   myBooks();
 })
-
 
 let booksContent = "";
 
@@ -59,8 +58,9 @@ function myBooks() {
     </div>
       `;
   })
+  
   mainSetion.innerHTML = booksContent;
-  console.log(booksContent);
+  
 };
 
 myBooks();
