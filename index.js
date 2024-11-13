@@ -1,4 +1,9 @@
 const mainSetion = document.querySelector("main");
+const book = document.getElementById('book');
+const author = document.getElementById('author');
+const pages = document.getElementById('pages');
+const btn = document.querySelector('.btn');
+const form = document.querySelector('form');
 
 function Book(title, author, pages, isRead) {
   this.title = title;
@@ -26,12 +31,21 @@ const stepsToChrist = new Book(
   "not yet read"
 );
 
-const books = [theDesireOfAges, theGreatControversy, stepsToChrist];
+let books = [theDesireOfAges, theGreatControversy, stepsToChrist];
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  books.push(new Book(`${book.value}`, `${author.value}`, `${pages.value}`));
+  mainSetion.innerHTML ='';
+  myBooks();
+})
+
 
 let booksContent = "";
 
-books.map((book) => {
-  booksContent += `
+function myBooks() {
+  books.map((book) => {
+    booksContent += `
     <div class="books-content">
       <div class="image">
         <img src="https://img.freepik.com/free-vector/white-brochure-with-blue-wavy-shapes_1048-2838.jpg?t=st=1731442762~exp=1731446362~hmac=b6c460b0785726babc080b209ae6a849b0e39612110020df8d36081f902d6342&w=740" alt="my imge">
@@ -44,6 +58,9 @@ books.map((book) => {
       </div>
     </div>
       `;
-});
+  })
+  mainSetion.innerHTML = booksContent;
+  console.log(booksContent);
+};
 
-mainSetion.innerHTML = booksContent;
+myBooks();
