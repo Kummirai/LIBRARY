@@ -72,7 +72,6 @@ let identifier = 1;
 
 function myBooks() {
   console.log(books);
-
   books.forEach((book) => {
     booksContent += `
     <div class="books-content">
@@ -91,11 +90,14 @@ function myBooks() {
   });
   mainSection.innerHTML = booksContent;
   const removeBtn = document.querySelectorAll("#remove");
-  console.log(removeBtn);
+  const removeButtons = Array.from(removeBtn);
+  console.log(removeButtons);
 
-  removeBtn.forEach((button) => {
+  removeButtons.forEach((button) => {
     button.addEventListener("click", () => {
-      console.log("you clicked me!");
+      let item = removeButtons.indexOf(button);
+      booksContent = books.splice(item, 1);
+      myBooks();
     });
   });
 }
