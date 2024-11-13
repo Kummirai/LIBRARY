@@ -18,24 +18,24 @@ function Book(id, title, author, pages, isRead) {
 
 const theGreatControversy = new Book(
   1,
-  "The Great Controversy",
-  "Elen G White",
-  592,
+  "Pride and Prejudice",
+  "Jane Austen",
+  274,
   "not yet read"
 );
 const theDesireOfAges = new Book(
   2,
-  "The Desire Of Ages",
-  "Elen G White",
-  456,
+  "Make Your Bed",
+  "William H. McRaven",
+  144,
   "not yet read"
 );
 const stepsToChrist = new Book(
   3,
   "Steps to Christ",
   "Elen G White",
-  287,
-  "not yet read"
+  126,
+  "Book Reading Complete"
 );
 
 let books = [theDesireOfAges, theGreatControversy, stepsToChrist];
@@ -44,7 +44,7 @@ let isItRead = "";
 
 checkBox.addEventListener("change", (event) => {
   if (event.target.checked) {
-    isItRead = "Book Is Read";
+    isItRead = "Book Reading Complete";
   } else {
     isItRead = "Not Yet Read";
   }

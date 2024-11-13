@@ -73,6 +73,9 @@ form {
 .close img {
   width: 22px;
   padding: 4px;
+  position: absolute;
+  top: 16px;
+  right: 16px;
 }
 
 .close img:hover {
